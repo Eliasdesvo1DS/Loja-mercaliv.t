@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atividades educativas para aprender a manipular elementos HTML usando JavaScript e DOM.">
+  <title>Aula DOM — Livraria demonstrativa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dom-aula.css">
+  <script src="js/dom-aula.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Voltar para a livraria">
+      <span class="brand-symbol" aria-hidden="true">↔</span>
+      <span><strong>Mercado<span>Livre</span></strong><small>LIVRARIA DEMONSTRATIVA</small></span>
+    </a>
+    <a class="back-link" href="index.html">← Voltar à livraria</a>
+  </header>
+
+  <main class="page-wrap">
+    <section class="intro">
+      <p class="eyebrow">HTML + JAVASCRIPT</p>
+      <h1 id="titulo">Aula DOM</h1>
+      <p>Explore exemplos simples de como o JavaScript encontra e altera elementos de uma página.</p>
+      <div class="concept"><strong>O que é DOM?</strong><span>DOM é a representação da página HTML que o JavaScript pode consultar e modificar, por exemplo, alterando textos, listas, imagens e estilos.</span></div>
+    </section>
+
+    <div class="activity-grid">
+      <section class="panel">
+        <span class="step">ATIVIDADE 1</span>
+        <h2>Alterar o título</h2>
+        <p>Digite um texto e use o botão para mudar o título principal da página.</p>
+        <label for="nome">Novo título</label>
+        <input id="nome" name="nome" type="text" placeholder="Digite um título" maxlength="80">
+        <button class="button" id="mudarTitulo" type="button">Alterar título</button>
+      </section>
+
+      <section class="panel">
+        <span class="step">ATIVIDADE 2</span>
+        <h2>Classificação do Brasileirão</h2>
+        <p>Escolha uma posição de 1 a 3 e informe o nome do time.</p>
+        <ol class="ranking" id="ranking">
+          <li><span class="position">1º</span><span class="time">Aguardando time</span></li>
+          <li><span class="position">2º</span><span class="time">Aguardando time</span></li>
+          <li><span class="position">3º</span><span class="time">Aguardando time</span></li>
+        </ol>
+        <label for="novo">Nome do time</label>
+        <input id="novo" name="novo" type="text" placeholder="Ex.: Palmeiras" maxlength="50">
+        <label for="posicao">Posição</label>
+        <select id="posicao" name="posicao">
+          <option value="">Selecione uma posição</option>
+          <option value="1">1º lugar</option><option value="2">2º lugar</option><option value="3">3º lugar</option>
+        </select>
+        <button class="button" id="adicionarTime" type="button">Adicionar classificação</button>
+        <p class="hint">Exemplo didático: os dados são alterados apenas nesta página.</p>
+      </section>
+
+      <section class="panel">
+        <span class="step">ATIVIDADE 3</span>
+        <h2>Calendário</h2>
+        <p>Escolha um número para exibir o mês correspondente.</p>
+        <label for="mes">Número do mês (1 a 4)</label>
+        <input id="mes" name="mes" type="number" min="1" max="4" step="1" placeholder="1">
+        <button class="button" id="mostrarMes" type="button">Mostrar mês</button>
+        <div class="result-box" aria-live="polite">Mês escolhido: <strong id="resultado">—</strong></div>
+        <ul class="month-list"><li>Janeiro</li><li>Fevereiro</li><li>Março</li><li>Abril</li></ul>
+      </section>
+
+      <section class="panel">
+        <span class="step">ATIVIDADE 4</span>
+        <h2>Criar uma imagem</h2>
+        <p>O botão cria um elemento <code>img</code> usando JavaScript e o adiciona à página.</p>
+        <button class="button" id="btnImage" type="button">Gerar imagem</button>
+        <div id="containerImg" class="image-container" aria-live="polite"></div>
+      </section>
+
+      <section class="panel wide-panel">
+        <span class="step">ATIVIDADE 5</span>
+        <h2>Eventos JavaScript</h2>
+        <p>Experimente clicar no botão e mover o cursor sobre ele. Cada ação dispara um evento diferente.</p>
+        <button class="event-button" id="btnmsg" type="button">Clique ou passe o mouse</button>
+        <p class="result-box" id="eventResult" aria-live="polite">O evento aparecerá aqui.</p>
+      </section>
+    </div>
+
+    <section class="footer-note">
+      <strong>Aprendizado:</strong> os exemplos usam seletores e métodos do DOM, como <code>getElementById()</code>, <code>querySelector()</code>, <code>createElement()</code>, <code>appendChild()</code> e eventos de clique e mouse.
+    </section>
+  </main>
+  <footer><span>Projeto educacional • Aula DOM</span><a href="index.html">Voltar à loja de livros ↑</a></footer>
+</body>
+</html>

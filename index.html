@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Livraria demonstrativa com busca, categorias e carrinho de livros.">
+  <title>Mercado Livre — Livraria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="top-strip">Histórias para todos os gostos <span>•</span> Livraria demonstrativa</div>
+  <header class="site-header">
+    <div class="header-main container">
+      <a class="brand" href="#" aria-label="Página inicial">
+        <span class="brand-symbol" aria-hidden="true"><span>↔</span></span>
+        <span class="brand-name">Mercado<span>Livre</span><small>LIVRARIA DEMONSTRATIVA</small></span>
+      </a>
+      <form class="search-form" id="searchForm" role="search">
+        <label class="sr-only" for="searchInput">Buscar livros</label>
+        <input id="searchInput" type="search" placeholder="Buscar livros, autores e gêneros" autocomplete="off">
+        <button type="submit" aria-label="Buscar">⌕</button>
+      </form>
+      <button class="cart-button" id="openCart" type="button" aria-label="Abrir carrinho">
+        <span aria-hidden="true">🛒</span><span class="cart-label">Carrinho</span><b id="cartCount">0</b>
+      </button>
+    </div>
+    <nav class="category-nav container" aria-label="Categorias">
+      <button class="nav-category active" data-category="Todos">Todos os livros</button>
+      <button class="nav-category" data-category="Literatura">Literatura</button>
+      <button class="nav-category" data-category="Fantasia">Fantasia</button>
+      <button class="nav-category" data-category="Desenvolvimento">Desenvolvimento</button>
+      <button class="nav-category" data-category="Estudos">Estudos</button>
+      <a class="nav-category dom-nav-link" href="aula-dom.html">Aula DOM</a>
+      <span class="nav-promo">Leituras em destaque</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" aria-label="Destaque">
+      <div class="hero-copy">
+        <span class="eyebrow">SUA PRÓXIMA LEITURA</span>
+        <h1>Grandes histórias começam aqui.</h1>
+        <p>Descubra romances, fantasia, clássicos e livros para aprender algo novo.</p>
+        <button class="primary-button" id="seeOffers" type="button">Explorar livros</button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="floating-card card-one">📚</div><div class="floating-card card-two">📖</div><div class="floating-card card-three">✍️</div>
+        <div class="hero-circle"></div>
+      </div>
+    </section>
+
+    <section class="benefits container" aria-label="Benefícios">
+      <article><span class="benefit-icon">📚</span><div><strong>Vários gêneros</strong><small>Encontre seu próximo livro favorito</small></div></article>
+      <article><span class="benefit-icon">🔎</span><div><strong>Busca simples</strong><small>Pesquise por título ou autor</small></div></article>
+      <article><span class="benefit-icon">🛒</span><div><strong>Carrinho demonstrativo</strong><small>Monte sua lista de livros</small></div></article>
+    </section>
+
+    <section class="products-section container" id="productsSection">
+      <div class="section-heading">
+        <div><p class="section-kicker">ESCOLHAS PARA LER</p><h2 id="productsTitle">Livros em destaque</h2></div>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div class="chips" id="categoryChips" aria-label="Filtrar por categoria">
+        <button class="chip active" data-category="Todos">Todos</button>
+        <button class="chip" data-category="Literatura">Literatura</button>
+        <button class="chip" data-category="Fantasia">Fantasia</button>
+        <button class="chip" data-category="Desenvolvimento">Desenvolvimento</button>
+        <button class="chip" data-category="Estudos">Estudos</button>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🔎</span><h3>Nenhum livro encontrado</h3><p>Tente buscar outro título, autor ou gênero.</p>
+        <button class="secondary-button" id="clearFilters">Limpar filtros</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Mercado Livre — livraria demonstrativa</strong><p>Projeto educacional feito com HTML, CSS e JavaScript. <a href="aula-dom.html">Abrir demonstração de DOM</a>.</p></div>
+      <p class="footer-note">Este site não é afiliado nem representa uma loja oficial. Os livros e preços são ilustrativos.</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-header"><div><p class="section-kicker">SUA LISTA</p><h2>Meu carrinho</h2></div><button class="icon-button" id="closeCart" aria-label="Fechar carrinho">✕</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>📚</span><h3>Seu carrinho está vazio</h3><p>Adicione livros para montar sua lista.</p></div>
+    <div class="cart-summary" id="cartSummary" hidden>
+      <div class="summary-line"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <div class="summary-line shipping"><span>Entrega</span><strong>Grátis (exemplo)</strong></div>
+      <div class="summary-line total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="primary-button checkout-button" id="checkoutButton">Finalizar compra demonstrativa</button>
+      <p class="checkout-note">Este botão não realiza pagamentos nem envia pedidos reais.</p>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
